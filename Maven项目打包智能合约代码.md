@@ -445,8 +445,8 @@ import java.io.InputStream;
 
 public class ContractCodeHexString {
     public static void main(String[] args) throws IOException {
-        // 把jar包转成流
-        InputStream in = new FileInputStream(ContractCodeHexString.class.getResource("/contract.jar").getFile());
+        // 把jar包转成流(把jar包文件放到classpath根路径下)
+        InputStream in = new FileInputStream(ContractCodeHexString.class.getResource("/token-1.0-SNAPSHOT.jar").getFile());
         // 把流转成字节数组
         byte[] contractCode = IOUtils.toByteArray(in);
         // 把字节数组转成Hex字符串
