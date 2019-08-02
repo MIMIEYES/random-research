@@ -118,7 +118,7 @@ interval=5
 
 ### 3. 启动相关模块
 
-![graph](https://github.com/MIMIEYES/readmd/blob/master/package/startModules_v1.png)
+![graph](https://github.com/MIMIEYES/readmd/blob/master/package/startModules_v1.jpg)
 
 其中`MyKernelBootstrap`优先启动，其余模块启动不顺序要求
 
