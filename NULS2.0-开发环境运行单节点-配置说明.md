@@ -31,7 +31,7 @@ crossPort=28001
 #魔法参数
 packetMagic=89898989
 #种子节点
-selfSeedIps=192.168.1.40:18001
+selfSeedIps=127.0.0.1:18001
 
 [account]
 keystoreFolder=/keystore/backup
@@ -108,7 +108,7 @@ minNodeAmount=1
 maxNodeAmount=10
 sendHeight=5
 byzantineRatio=70
-crossSeedIps=192.168.1.40:28001
+crossSeedIps=127.0.0.1:28001
 dataPath=../../../../../data
 logPath=../../../../../Logs
 
