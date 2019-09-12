@@ -24,9 +24,10 @@ symbol=NULS
 mainChainId=2
 mainAssetId=1
 mainSymbol=NULS
-blackHolePublicKey=0298f88c3cae67385ce3cbee00f78816db3e56e566b62bd0f4c5b45f205d3021c3
+blackHolePublicKey=000000000000000000000000000000000000000000000000000000000000000000
 #默认资产的小数精确位数
 decimals=8
+
 [network]
 port=18001
 crossPort=28001
@@ -55,8 +56,12 @@ minNodeAmount=0
 downloadNumber=10
 #从网络节点下载单个区块的超时时间
 singleDownloadTimeout=15000
+#从网络节点下载多个区块的超时时间
+batchDownloadTimeout=60000
 #区块同步过程中缓存的区块字节数上限(20M)
 cachedBlockSizeLimit=20971520
+#创世块文件路径(支持绝对路径与相对路径,相对路径相对于此配置文件的目录)
+#genesisBlockPath=genesis-block_dev.json
 dependent=smart-contract
 
 [consensus]
@@ -82,6 +87,8 @@ initTime=1563951658
 deflationRatio=100
 #通缩间隔时间(单位：S)
 deflationTimeInterval=31536000
+#总通胀量
+totalInflationAmount=11000000000000000
 dataPath=../../../../../data
 logPath=../../../../../Logs
 dependent=smart-contract
@@ -90,8 +97,8 @@ dependent=smart-contract
 #合约视图方法调用最大消耗的Gas
 maxViewGas=100000000
 
-[api-module]
-#api-module模块对外的rpc端口号
+[public-service]
+#public-service模块对外的rpc端口号
 rpcPort=18003
 #数据库url地址
 databaseUrl=127.0.0.1
@@ -122,6 +129,13 @@ logPath=../../../../../Logs
 
 [protocol-update]
 interval=5
+
+[nuls-api]
+dependent=smart-contract
+#httpServer的启动ip
+server_ip=0.0.0.0
+#httpServer的启动port
+server_port=18004
 ```
 
 ### 3. 启动相关模块
